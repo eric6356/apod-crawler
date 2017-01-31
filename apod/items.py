@@ -13,6 +13,8 @@ class APODMongoItem(scrapy.Item):
     title = scrapy.Field()
     url = scrapy.Field()
     date = scrapy.Field(serializer=lambda d: d.strftime('%Y-%m-%d'))
+    media_type = scrapy.Field()
+    video_url = scrapy.Field()
     img_path = scrapy.Field()
     hd_img_path = scrapy.Field()
     explanation = scrapy.Field()
