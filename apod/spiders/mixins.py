@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 
 
 def parse_apod(response, apod):
-    date = response.css('center:first-child>p:last-child::text').extract_first()
+    date = response.css('center:first-child>p:last-child::text').extract_first().strip()
 
     try:
         apod['date'] = datetime.strptime(date, '%Y %B %d')
